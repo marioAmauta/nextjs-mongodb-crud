@@ -13,9 +13,7 @@ export default async function handler(req, res) {
   switch (method) {
     case 'GET':
       try {
-        const foundTask = await TaskModel.findById(id);
-
-        console.log({ foundTask });
+        const foundTask = await TaskModel.findOne({ title: id });
 
         if (!foundTask) return res.status(404).json({ message: 'Task not found' });
 
@@ -31,7 +29,6 @@ export default async function handler(req, res) {
         const updatedTask = await TaskModel.findByIdAndUpdate(id, body, {
           new: true
         });
-        console.log({ updatedTask });
 
         if (!updatedTask) {
           return res.status(400).json({

@@ -34,10 +34,7 @@ export async function getServerSideProps(context) {
   console.log('backend');
 
   dbConnect();
-  // const tasks = serializeToJSON(await TaskModel.find({}));
-
-  const res = await fetch('http://localhost:3000/api/tasks');
-  const tasks = await res.json();
+  const tasks = serializeToJSON(await TaskModel.find());
 
   return {
     props: {
