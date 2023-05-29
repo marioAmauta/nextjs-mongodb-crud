@@ -18,6 +18,10 @@ connection.on('connected', () => {
   console.log('MongoDB is connected');
 });
 
+connection.on('disconnected', () => {
+  console.log('MongoDB is disconnected');
+});
+
 connection.on('error', err => {
   console.log({ err });
 });

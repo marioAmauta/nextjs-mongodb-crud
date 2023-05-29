@@ -1,7 +1,4 @@
 import { TaskModel } from '@/models/TaskModel';
-import { dbConnect } from '@/utils/mongoose';
-
-dbConnect();
 
 export default async function handler(req, res) {
   const {
@@ -13,7 +10,7 @@ export default async function handler(req, res) {
   switch (method) {
     case 'GET':
       try {
-        const foundTask = await TaskModel.findOne({ title: id });
+        const foundTask = await TaskModel.findById(id);
 
         if (!foundTask) return res.status(404).json({ message: 'Task not found' });
 

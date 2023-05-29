@@ -1,8 +1,5 @@
-import { dbConnect } from '@/utils/mongoose';
 import { TaskModel } from '@/models/TaskModel';
 import { manyTasksMock } from '../../../../cypress/fixtures/mockData';
-
-dbConnect();
 
 export default async function handler(req, res) {
   const { method, body } = req;

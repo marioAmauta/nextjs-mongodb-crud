@@ -1,7 +1,7 @@
 GET http://localhost:3000/api/tasks HTTP/1.1
 ###
 
-GET http://localhost:3000/api/tasks/646feb5d31ff4dd5e1b1b811 HTTP/1.1
+GET http://localhost:3000/api/tasks/ HTTP/1.1
 
 ###
 
@@ -9,7 +9,7 @@ POST http://localhost:3000/api/tasks HTTP/1.1
 Content-Type: application/json
 
 {
-  "title": "my tasks12",
+  "title": "my tasks",
   "description": "this is a task"
 }
 
